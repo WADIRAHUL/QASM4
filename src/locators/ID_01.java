@@ -20,5 +20,7 @@ public class ID_01 {
 		driver.findElement(By.id("loginButton")).click();
 		Thread.sleep(9000);
 		driver.quit();
+		driver.findElement(By.tagName("a"));
+		
 	}
 }
