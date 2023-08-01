@@ -13,7 +13,5 @@ public class LaunchingEmptyBrowser {
 		 Thread.sleep(3000);
 		 driver.findElement(By.linkText("Latest & Trending")).click();
 		 Thread.sleep(5000);
-		 
 	}
-	
 }

@@ -2,6 +2,7 @@ package practice;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Xpath {
@@ -11,23 +12,16 @@ public class Xpath {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		
-		driver.get("https://www.actitime.com/");
+		driver.get("https://demo.actitime.com/login.do");
+		driver.findElement(By.id("username")).sendKeys("admin");
+		driver.findElement(By.name("pwd")).sendKeys("admin");
+		driver.findElement(By.id("loginButton")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//a[text()='Try Free']")).click();
-		Thread.sleep(3000);
-		
-		driver.findElement(By.id("First Name")).sendKeys("Kiran");
-		Thread.sleep(3000);
-		driver.findElement(By.id("Last Name")).sendKeys("Krithika");
-		Thread.sleep(3000);
-		driver.findElement(By.id("Email")).sendKeys("kk69@hotmail.com");
-		Thread.sleep(3000);
-		driver.findElement(By.id("Company")).sendKeys("Pirex Star");
-		Thread.sleep(3000);
-		driver.findElement(By.id("confirm-button")).click();
-		Thread.sleep(3000);
-		
+		WebElement error = driver.findElement(By.xpath("//span[.='Username or Password is invalid. Please try again.']"));
+		if(error.isDisplayed()) {
+			driver.findElement(By.id("toPasswordRecoveryPageLink")).click();
+		}
+		Thread.sleep(5000);
 		driver.quit();
-		
 	}
 }

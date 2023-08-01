@@ -1,7 +1,15 @@
+/java_script_executor/
+/locators/
+/pom/
+/pomtestscripts/
+/popups/
+/practice/
+/runtimepolymorphism/
+/select_class/
+/shadowDOM/
+/synchronization/
 /takescreenshot/
 /testng/
 /webdrivermethod1/
 /webdrivermethods/
 /webelements/
-/synchronization/
-/popups/
